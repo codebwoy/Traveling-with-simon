@@ -1,7 +1,7 @@
 // src/components/NewPost.js
 import React from "react";
 
-function NewPost() {
+export default function NewPost() {
   return (
     <div>
       <h2>New Post</h2>
@@ -9,5 +9,3 @@ function NewPost() {
     </div>
   );
 }
-
-export default NewPost;

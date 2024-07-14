@@ -1,7 +1,7 @@
 // src/components/Login.js
 import React from "react";
 
-function Login() {
+export default function Login() {
   return (
     <div>
       <h2>Login</h2>
@@ -9,5 +9,3 @@ function Login() {
     </div>
   );
 }
-
-export default Login;

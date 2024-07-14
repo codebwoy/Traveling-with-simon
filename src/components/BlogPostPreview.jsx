@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { nextImage } from "../store/imagesSlice";
+import { nextImage } from "../outlet/imagesSlice";
 import "./BlogPostPreview.css";
 
-const BlogPostPreview = () => {
+export default function BlogPostPreview() {
   const dispatch = useDispatch();
   const images = useSelector((state) => state.images.images);
   const currentIndex = useSelector((state) => state.images.currentIndex);
@@ -29,6 +29,4 @@ const BlogPostPreview = () => {
       ))}
     </div>
   );
-};
-
-export default BlogPostPreview;
+}

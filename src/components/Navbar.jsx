@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 
-function Navbar() {
+export default function Navbar() {
   return (
     <AppBar position="static">
       <Toolbar>
@@ -36,5 +36,3 @@ function Navbar() {
     </AppBar>
   );
 }
-
-export default Navbar;

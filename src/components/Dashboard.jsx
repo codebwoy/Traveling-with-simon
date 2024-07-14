@@ -2,7 +2,7 @@
 import React from "react";
 import Map from "./Map";
 
-function Dashboard() {
+export default function Dashboard() {
   return (
     <div style={{ display: "flex" }}>
       <div style={{ flex: 1, padding: "20px" }}>
@@ -15,5 +15,3 @@ function Dashboard() {
     </div>
   );
 }
-
-export default Dashboard;

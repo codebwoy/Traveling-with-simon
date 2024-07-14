@@ -1,30 +1,15 @@
-// import React from 'react'
-// import ReactDOM from 'react-dom/client'
-// import App from './App.jsx'
-// import './index.css'
-
-// ReactDOM.createRoot(document.getElementById('root')).render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-// )
-
-// src/index.js
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
-import store from "./store/store";
-import BlogPostPreview from "./components/BlogPostPreview";
-import "./index.css";
 import App from "./App";
+import store from "./outlet/Store";
+import "./index.css";
 import "./App.css";
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  <Provider store={store}>
-    <BlogPostPreview />
-  </Provider>,
-  document.getElementById("root")
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>
 );
