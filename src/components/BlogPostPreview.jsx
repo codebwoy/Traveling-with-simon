@@ -11,7 +11,7 @@ export default function BlogPostPreview() {
   useEffect(() => {
     const interval = setInterval(() => {
       dispatch(nextImage());
-    }, 2000); // Change image every 2 seconds
+    }, 2000); // blogpost changes image every 2 seconds
     return () => clearInterval(interval);
   }, [dispatch]);
 
