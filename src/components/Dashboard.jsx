@@ -8,7 +8,7 @@ export default function Dashboard() {
   return (
     <div className="dashboard-container">
       <div className="dashboard-left">
-        <h2>Dashboard</h2>
+       
         <div className="blogpost-grid">
           <BlogPostPreview className="blogpost-item" />
           
