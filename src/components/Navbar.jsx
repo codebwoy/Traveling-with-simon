@@ -7,6 +7,8 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
   return (
@@ -31,6 +33,9 @@ export default function Navbar() {
         </Button>
         <Button color="inherit" component={Link} to="/login">
           Login
+          <p>
+            <FontAwesomeIcon icon={faRightToBracket} />
+          </p>
         </Button>
       </Toolbar>
     </AppBar>
