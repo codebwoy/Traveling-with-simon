@@ -9,7 +9,7 @@ export default function Map() {
   const [lng] = useState(13.3888); // Default longitude for Berlin
   const [lat] = useState(52.517); // Default latitude for Berlin
   const [zoom] = useState(4); // Zoom level to encompass all cities
-  const [API_KEY] = useState("XLaDGrxR8YKvAfCO234c"); // my API key
+  const [API_KEY] = useState("XLaDGrxR8YKvAfCO234c"); // Your API key
 
   const cities = [
     {
@@ -19,8 +19,8 @@ export default function Map() {
       lat: 41.3828,
       title: "Exploring Barcelona",
       date: "2023-07-01",
-      authorName: "John Doe",
-      authorImage: "author-image-url-1",
+      authorName: "Janny Doe",
+      authorImage: "public/portra.jpg",
     },
     {
       id: 2,
@@ -30,7 +30,7 @@ export default function Map() {
       title: "Copenhagen in a Day",
       date: "2023-07-10",
       authorName: "Jane Smith",
-      authorImage: "author-image-url-2",
+      authorImage: "public/blonde.jpg",
     },
     {
       id: 3,
@@ -39,8 +39,8 @@ export default function Map() {
       lat: 52.517,
       title: "Berlin's Best Spots",
       date: "2023-08-05",
-      authorName: "Alice Johnson",
-      authorImage: "author-image-url-3",
+      authorName: "Christian Schwartz",
+      authorImage: "public/mann.jpg",
     },
     {
       id: 4,
@@ -50,7 +50,7 @@ export default function Map() {
       title: "Paris: A Love Story",
       date: "2023-08-20",
       authorName: "Bob Brown",
-      authorImage: "author-image-url-4",
+      authorImage: "public/john.jpg",
     },
     {
       id: 5,
@@ -60,7 +60,7 @@ export default function Map() {
       title: "Rome's Ancient Wonders",
       date: "2023-09-15",
       authorName: "Charlie Davis",
-      authorImage: "author-image-url-5",
+      authorImage: "public/retro.jpg",
     },
     {
       id: 6,
@@ -70,7 +70,7 @@ export default function Map() {
       title: "Vienna: A Cultural Journey",
       date: "2023-09-30",
       authorName: "Eve White",
-      authorImage: "author-image-url-6",
+      authorImage: "public/deagreez.jpg",
     },
   ];
 
@@ -83,12 +83,13 @@ export default function Map() {
       center: [lng, lat],
       zoom: zoom,
     });
+
     map.current.addControl(new maplibregl.NavigationControl(), "top-right");
 
     cities.forEach((city) => {
       const popupContent = `
         <div class="info-window">
-          <button class="close-btn" onclick="this.parentElement.style.display='none'">x</button>
+          <button class="close-btn" parentElement.style.display='none'"></button>
           <h2>${city.title}</h2>
           <p>Visiting Date: ${city.date}</p>
           <div class="author">
