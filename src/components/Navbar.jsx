@@ -32,10 +32,9 @@ export default function Navbar() {
           New Post
         </Button>
         <Button color="inherit" component={Link} to="/login">
-          Login
-          <p>
-            <FontAwesomeIcon icon={faRightToBracket} />
-          </p>
+          <FontAwesomeIcon icon={faRightToBracket} />
+
+          <Box sx={{ ml: 1 }}>Login</Box>
         </Button>
       </Toolbar>
     </AppBar>

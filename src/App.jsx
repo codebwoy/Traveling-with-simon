@@ -6,27 +6,36 @@ import Contact from "./components/Contact";
 import NewPost from "./components/NewPost";
 import Login from "./components/Login";
 import BlogPostPreview from "./components/BlogPostPreview";
+import BlogPostDetail from "./components/BlogPostDetail";
 import Map from "./components/Map";
-import Headbar from "./components/Headbar.jsx";
+import Headbar from "./components/Headbar";
+import { BlogProvider } from "./context/BlogContext";
+import GlobalStyles from "./styles/GlobalStyles";
 import "./App.css";
 
-export default function App() {
+function App() {
   return (
-    <Router>
-      <div>
-        <Navbar /> {/* Render Navbar component */}
-        <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/new-post" element={<NewPost />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-        <BlogPostPreview />
-        <div className="App">
-          <Headbar />
-          <Map />
+    <BlogProvider>
+      <GlobalStyles />
+      <Router>
+        <div>
+          <Navbar /> {/* Render Navbar component */}
+          <Routes>
+            <Route path="/" element={<BlogPostPreview />} />
+            <Route path="/post/:id" element={<BlogPostDetail />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/new-post" element={<NewPost />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+          <div className="App">
+            <Headbar />
+            <Map />
+          </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </BlogProvider>
   );
 }
+
+export default App;
