@@ -1,6 +1,4 @@
-// src/components/Navbar.js
 import React from "react";
-// import './navbar.css';
 import { Link } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -9,32 +7,56 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
+import "./Navbar.css"; // Importing the CSS file
 
 export default function Navbar() {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          <Link to="/" style={{ color: "white", textDecoration: "none" }}>
-            <Box component="span" sx={{ mr: 2 }}>
-              🏠
-            </Box>
-            Roaming with Simon
-          </Link>
+        <Typography
+          variant="h8"
+          component="div"
+          sx={{ flexGrow: 1 }}
+          className="navbar-title"
+        >
+          <Box component="span" className="navbar-icon">
+            🏠
+          </Box>
+          Roaming with Simon
         </Typography>
-        <Button color="inherit" component={Link} to="/dashboard">
+
+        <Button
+          color="inherit"
+          component={Link}
+          to="/dashboard"
+          className="navbar-button"
+        >
           Dashboard
         </Button>
-        <Button color="inherit" component={Link} to="/contact">
+        <Button
+          color="inherit"
+          component={Link}
+          to="/contact"
+          className="navbar-button"
+        >
           Contact
         </Button>
-        <Button color="inherit" component={Link} to="/new-post">
+        <Button
+          color="inherit"
+          component={Link}
+          to="/new-post"
+          className="navbar-button"
+        >
           New Post
         </Button>
-        <Button color="inherit" component={Link} to="/login">
+        <Button
+          color="inherit"
+          component={Link}
+          to="/login"
+          className="navbar-button"
+        >
           <FontAwesomeIcon icon={faRightToBracket} />
-
-          <Box sx={{ ml: 1 }}>Login</Box>
+          <Box className="navbar-login-text">Login</Box>
         </Button>
       </Toolbar>
     </AppBar>

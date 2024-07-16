@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 import Dashboard from "./components/Dashboard";
 import Contact from "./components/Contact";
@@ -24,11 +25,11 @@ export default function App() {
           <Routes>
             <Route path="/blogpostpreview" element={<BlogPostPreview />} />
 
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/new-post" element={<NewPost />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/blogpostpreview" element={<BlogPostPreview />} />
+
             <Route path="/blogdetail/:id" element={<BlogDetail />} />
           </Routes>
           <div className="App">

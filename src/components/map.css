@@ -14,7 +14,7 @@
 .info-window {
   position: relative;
   font-family: Arial, sans-serif;
-  padding: 10px;
+  padding: 5px;
   max-width: 200px;
 }
 
@@ -24,14 +24,14 @@
   right: 5px;
   background: transparent;
   border: none;
-  font-size: 16px;
+  font-size: 12px;
   cursor: pointer;
 }
 
 .author {
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .author-image {
