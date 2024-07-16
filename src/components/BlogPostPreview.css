@@ -1,22 +1,14 @@
-/* BlogPostPreview.css */
-.preview-container {
+/* .preview-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-}
-
-.preview {
-  border: 1px solid #ccc;
+  width: 30%;
   padding: 10px;
-  cursor: pointer;
-}
+} */
 
-.image-container {
-  text-align: center;
-}
-
-.author-info {
-  display: flex;
-  align-items: center;
+.preview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
+  width: 50%;
+  padding: 10px;
 }

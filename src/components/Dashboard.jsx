@@ -1,17 +1,17 @@
 // src/components/Dashboard.js
 import React from "react";
 import Map from "./Map";
+import BlogPostPreview from "./BlogPostPreview";
+import "./Dashboard.css";
 
 export default function Dashboard() {
   return (
-    <div style={{ display: "flex" }}>
-      <div style={{ flex: 1, padding: "20px" }}>
-        <h2>Dashboard HERE PUT THE BLOG POST PREVIEW CARDS HERE</h2>
-        <p>Sample overview of all blog posts</p>
+    <div className="dashboard-container">
+      <div className="map-container">
+       <Map/>
+        <div className="map-placeholder">Map goes here</div>
       </div>
-      <div style={{ flex: 1, padding: "20px" }}>
-        <Map />
-      </div>
+      <BlogPostPreview />
     </div>
   );
 }

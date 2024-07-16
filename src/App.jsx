@@ -6,14 +6,15 @@ import Contact from "./components/Contact";
 import NewPost from "./components/NewPost";
 import Login from "./components/Login";
 import BlogPostPreview from "./components/BlogPostPreview";
-import BlogPostDetail from "./components/BlogPostDetail";
+import BlogDetail from "./components/BlogDetail";
 import Map from "./components/Map";
 import Headbar from "./components/Headbar";
 import { BlogProvider } from "./context/BlogContext";
 import GlobalStyles from "./styles/GlobalStyles";
+
 import "./App.css";
 
-function App() {
+export default function App() {
   return (
     <BlogProvider>
       <GlobalStyles />
@@ -21,12 +22,14 @@ function App() {
         <div>
           <Navbar /> {/* Render Navbar component */}
           <Routes>
-            <Route path="/" element={<BlogPostPreview />} />
-            <Route path="/post/:id" element={<BlogPostDetail />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/blogpostpreview" element={<BlogPostPreview />} />
+
+            <Route path="/" element={<Dashboard />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/new-post" element={<NewPost />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/blogpostpreview" element={<BlogPostPreview />} />
+            <Route path="/blogdetail/:id" element={<BlogDetail />} />
           </Routes>
           <div className="App">
             <Headbar />
@@ -37,5 +40,3 @@ function App() {
     </BlogProvider>
   );
 }
-
-export default App;
