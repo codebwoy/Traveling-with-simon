@@ -6,10 +6,11 @@ import "./map.css";
 export default function Map() {
   const mapContainer = useRef(null);
   const map = useRef(null);
+ 
   const [lng] = useState(13.3888); // Default longitude for Berlin
   const [lat] = useState(52.517); // Default latitude for Berlin
   const [zoom] = useState(4); // Zoom level to encompass all cities
-  const [API_KEY] = useState("XLaDGrxR8YKvAfCO234c"); // Your API key
+  const [API_KEY] = useState("XLaDGrxR8YKvAfCO234c"); // my API key
 
   const cities = [
     {
@@ -83,13 +84,12 @@ export default function Map() {
       center: [lng, lat],
       zoom: zoom,
     });
-
     map.current.addControl(new maplibregl.NavigationControl(), "top-right");
 
     cities.forEach((city) => {
       const popupContent = `
         <div class="info-window">
-          <button class="close-btn" parentElement.style.display='none'"></button>
+          <button class="close-btn" onclick="this.parentElement.style.display='none'">x</button>
           <h2>${city.title}</h2>
           <p>Visiting Date: ${city.date}</p>
           <div class="author">

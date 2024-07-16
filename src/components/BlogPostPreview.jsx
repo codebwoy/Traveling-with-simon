@@ -1,29 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { BlogContext } from "../context/BlogContext";
-import styled from "styled-components";
-
-const PreviewContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-`;
-
-const Preview = styled.div`
-  border: 1px solid #ccc;
-  padding: 10px;
-  cursor: pointer;
-`;
-
-const ImageContainer = styled.div`
-  text-align: center;
-`;
-
-const AuthorInfo = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-`;
+import "./BlogPostPreview.css";
 
 export default function BlogPostPreview() {
   const { blogs } = useContext(BlogContext);
@@ -34,22 +12,26 @@ export default function BlogPostPreview() {
   };
 
   return (
-    <PreviewContainer>
+    <div className="preview-container">
       {blogs
         .sort((a, b) => new Date(a.visitingDate) - new Date(b.visitingDate))
         .map((blog) => (
-          <Preview key={blog.id} onClick={() => handleClick(blog.id)}>
+          <div
+            key={blog.id}
+            className="preview"
+            onClick={() => handleClick(blog.id)}
+          >
             <h3>{blog.title}</h3>
             <p>{blog.visitingDate}</p>
-            <AuthorInfo>
+            <div className="author-info">
               <img src={blog.author.image} alt={blog.author.name} />
               <span>{blog.author.name}</span>
-            </AuthorInfo>
-            <ImageContainer>
+            </div>
+            <div className="image-container">
               <img src={blog.image} alt={blog.title} />
-            </ImageContainer>
-          </Preview>
+            </div>
+          </div>
         ))}
-    </PreviewContainer>
+    </div>
   );
 }
