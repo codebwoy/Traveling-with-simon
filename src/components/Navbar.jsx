@@ -7,6 +7,9 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
+// import {  } from "@fortawesome/react-fontawesome"
+import { faPlaneDeparture } from "@fortawesome/free-solid-svg-icons";
+
 import "./Navbar.css"; // Importing the CSS file
 
 export default function Navbar() {
@@ -19,10 +22,11 @@ export default function Navbar() {
           sx={{ flexGrow: 1 }}
           className="navbar-title"
         >
+          <FontAwesomeIcon icon="fa-solid fa-plane-departure" />
           <Box component="span" className="navbar-icon">
-            🏠
+            <FontAwesomeIcon icon={faPlaneDeparture} />
           </Box>
-          Roaming with Simon
+          Traveling with Simon
         </Typography>
 
         <Button

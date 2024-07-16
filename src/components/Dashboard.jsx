@@ -7,12 +7,10 @@ import "./Dashboard.css";
 export default function Dashboard() {
   return (
     <div className="dashboard-container">
-       <BlogPostPreview />
+      <BlogPostPreview />
       <div className="map-container">
-       <Map/>
-        <div className="map-placeholder">Map goes here</div>
+        <Map />
       </div>
-     
     </div>
   );
 }
