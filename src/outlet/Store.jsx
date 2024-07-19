@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+// import { configureStore } from "@reduxjs/toolkit";
 import imagesReducer from "./imagesSlice";
 
 const store = configureStore({

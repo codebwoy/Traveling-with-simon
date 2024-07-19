@@ -1,0 +1,23 @@
+.blog-post-detail {
+  display: flex;
+}
+
+.blog-post-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.blog-post-map {
+  flex: 1;
+  height: 100%;
+}
+
+.back-button {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}

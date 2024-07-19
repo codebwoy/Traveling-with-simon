@@ -1,43 +1,26 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Navbar from "./components/Navbar";
+// import main from "./main";
 import Dashboard from "./components/Dashboard";
+import BlogPostDetail from "./components/BlogPostDetail";
 import Contact from "./components/Contact";
-import NewPost from "./components/NewPost";
-import Login from "./components/Login";
-import BlogPostPreview from "./components/BlogPostPreview";
-import BlogDetail from "./components/BlogDetail";
-import Map from "./components/Map";
-import Headbar from "./components/Headbar";
-import { BlogProvider } from "./context/BlogContext";
-import GlobalStyles from "./styles/GlobalStyles";
-
+import SomeComponent from "./components/SomeComponent";
 import "./App.css";
 
 export default function App() {
   return (
-    <BlogProvider>
-      <GlobalStyles />
-      <Router>
-        <div>
-          <Navbar /> {/* Render Navbar component */}
-          <Routes>
-            <Route path="/blogpostpreview" element={<BlogPostPreview />} />
-
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/new-post" element={<NewPost />} />
-            <Route path="/login" element={<Login />} />
-
-            <Route path="/blogdetail/:id" element={<BlogDetail />} />
-          </Routes>
-          <div className="App">
-            <Headbar />
-            <Map />
-          </div>
-        </div>
-      </Router>
-    </BlogProvider>
+    <Router>
+      <div className="app">
+        <main />
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/post/:id" element={<BlogPostDetail />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <h1>hello, world!</h1>
+        <SomeComponent />
+      </div>
+    </Router>
   );
 }

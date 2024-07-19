@@ -1,16 +1,16 @@
 import React, { useRef, useEffect, useState } from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import "./map.css";
+import "./MapComponent.css";
 
-export default function Map() {
+export default function MapComponent() {
   const mapContainer = useRef(null);
   const map = useRef(null);
 
   const [lng] = useState(13.3888); // Default longitude for Berlin
   const [lat] = useState(52.517); // Default latitude for Berlin
   const [zoom] = useState(4); // Zoom level to encompass all cities
-  const [API_KEY] = useState("XLaDGrxR8YKvAfCO234c"); // my API key
+  const [API_KEY] = useState(import.meta.env.VITE_TILES_API_KEY); // Your API key
 
   const cities = [
     {
@@ -89,7 +89,7 @@ export default function Map() {
     cities.forEach((city) => {
       const popupContent = `
        <div class="info-window">
-         <button class="close-btn" onclick="this.parentElement.style.display='none'"></button>
+         <button class="close-btn" onclick="this.parentElement.style.display='none'">&times;</button>
          <h2>${city.title}</h2>
          <p>Visiting Date: ${city.date}</p>
          <div class="author">
